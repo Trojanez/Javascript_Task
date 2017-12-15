@@ -1,0 +1,40 @@
+<script type="text/javascript">
+
+	/* Напишите сценарий, определяющий максимальную по длине неубывающую
+последовательность. */
+		
+		var arr = [];
+		var myArr = [];
+		var k = 0;
+		var i;
+
+		for (i = 0; i < 10; i++) {
+			arr[i] = Math.round(Math.random() * (100 - 1)) + 1;
+		}
+		console.log(arr);
+
+		for (i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				myArr[k] = i;
+				k++
+			}
+		}
+		console.log(myArr);
+
+		var max = myArr[0];
+		var min = 0;
+
+		for (i = 0; i < myArr.length; i++) {
+			if (myArr[i + 1] - myArr[i] > max ) {
+				max = myArr[i + 1];
+				min = myArr[i] + 1;
+			}
+		}
+		console.log(max);
+		console.log(min);
+
+		for (i = min; i <= max; i++) {
+			console.log(arr[i]);
+		}
+
+</script>

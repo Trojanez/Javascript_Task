@@ -1,0 +1,24 @@
+<script type="text/javascript">
+	
+	/* Решить “1” задачу с использование рекурсии. */
+
+	function powRecursion(x, n) {
+
+		if (n > 1) {
+			return x * powRecursion(x, n - 1);
+		} else {
+			return x;
+		}
+	}
+
+	powRecursion(3, 6);
+
+	/* Another way how to resolve this task */
+
+
+	function powRecursion2(x, n) {
+		return (n > 1) ? x * powRecursion2(x, n - 1) : x;
+	}
+	powRecursion2(3,6);
+
+</script>

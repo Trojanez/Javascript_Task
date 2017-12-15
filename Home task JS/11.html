@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+	/* Напишите сценарий, при работе которого определяется число элементов
+одномерного массива, совпадающих с заданным массивом. */
+	
+	var arr = [];
+	var myArr = [1,22,48,54,55,17,99,78,25,13];
+	var i;
+	var j;
+	var count = 0;
+	var totalArray = [];
+	var k = 0;
+
+	document.write( "Мой массив: " + (myArr + " ") + "<br/>");
+
+	for (i = 0; i < 10; i++) {
+		arr[i] = Math.round(Math.random() * 100);
+	}
+	document.write("Массив случайных чисел: " + (arr + " ") + "<br/>");
+
+	for (i = 0; i < arr.length; i++) {
+		for (j = 0; j < myArr.length; j++) {
+
+			if (arr[i] == myArr[j]) {
+				totalArray[k] = arr[i];
+				k++
+				count++
+			}
+		} 
+	} document.write("Количество совпавших элементов в обоих массивах: " + count + " ");
+
+	if (k != 0) {
+		document.write("Вот они: " + totalArray);
+	}
+	
+</script>
