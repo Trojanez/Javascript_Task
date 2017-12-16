@@ -1,19 +1,18 @@
-	var res = document.getElementsByTagName('button');
-
-	for (var i = 0; i < res.length; i++) {
-		res[i].addEventListener('click', function() {
-
-		});
-	}
+	makeCounter();
 
 	function makeCounter() {
 
 		var counterValue = 1;
 
 		return function() {
-			return counterValue++
+			return counterValue++;
 		}
 
 	}
 
-	setTimeout(makeCounter, 1000);
+	setTimeout(makeCounter, 2000);
+
+	/*window.onload = function() {
+		var res = document.getElementById("res");
+		res.addEventListener("click", );
+	}*/
