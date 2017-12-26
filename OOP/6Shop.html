@@ -1,0 +1,95 @@
+<script type="text/javascript">
+	
+	function Shop() {
+		this.warhouse = {
+			"laptop": 5,
+			"notebook": 15,
+			"PC": 7,
+			"mouse": 25,
+			"keyboard": 50,
+		};
+		this.price = {
+			"laptop": 1500,
+			"notebook": 1000,
+			"PC": undefined,
+			"mouse": 250,
+			"keyboard": undefined,
+		};
+		this.goodsAmount = this.addGoodsAmount();
+		this.getPrice = function( productName ) {
+			for(var key in this.price) {
+				key = productName;
+				var price = this.price[key];
+
+				return console.log("The price of one " + key + " is " + price);
+			}
+		};
+		this.getProduct = function( productName ) {
+			for(var key in this.warhouse) {
+				key = productName;
+				var amount = this.warhouse[key];
+
+				return console.log("Amount of " + key + " in warhouse = " + amount);
+			}
+		}
+
+	}
+	/* здесь хранится количество товаров во всех созданных магазинах */
+	Shop.prototype.totalGoodsAmount = 0;
+
+	/* функция, которая считает количество товаров в магазине */
+	var counter = 0;
+	Shop.prototype.addGoodsAmount = function() {
+		for(var key in this.warhouse) {
+			counter++
+			this.goodsAmount = counter;
+			Shop.prototype.totalGoodsAmount = counter;
+		}
+
+		return this.goodsAmount;
+	};
+
+	/* функция покупки товара */
+	Shop.prototype.buy = function( productName, amountToPurchase ) {
+		for(var key in this.warhouse) {
+			key = productName;
+
+			if(this.warhouse[key] < amountToPurchase) {
+				alert('There is no such amount of ' + key + '(s)' + ' at warhouse! Please correct.');
+				break;
+			}
+
+			this.warhouse[key] = this.warhouse[key] - amountToPurchase;
+
+			return console.log('You have purchased ' + amountToPurchase + ' ' + key + '(s)');
+		}
+	}
+	/* функция добавления товаров на склад (если расценка на товар отсутствует, товар не добавлять!) */
+	Shop.prototype.addProduct = function(objNewProduct) {
+		
+		for(var key in objNewProduct) {
+
+			if(this.price[key] == undefined) {
+				return console.log('На данный товар нет расценки! Он не может быть добавлен!');
+				break;
+			} else {
+				this.warhouse[key] += objNewProduct[key];
+			}
+		}
+	}
+	/* функция добавления расценки */
+	Shop.prototype.addPrice = function(objNewPrice) {
+		for(var key in objNewPrice) {
+			if(!(this.price[key])) {
+				this.price[key] = objNewPrice[key];
+			} else {
+				this.price[key] = objNewPrice[key];
+			}
+		}
+	}
+
+	var shop1 = new Shop();
+	var shop2 = new Shop();
+	var shop3 = new Shop();
+
+</script>

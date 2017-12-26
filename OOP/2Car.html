@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	
+	var auto = {
+		model: 'Toyota',
+		brand: 'Auris',
+		distance: 110000,
+		name: 'Max',
+		owner: {
+			name: 'Maksym',
+			surname: 'Degtyar',
+			age: 24,
+			surnameChange: function() {
+				return this.surname;
+			}
+		},
+		go: function( km, time ) {
+			this.time = time;
+			this.km = km;
+
+			var res = this.time * this.km;
+
+			return "Hello, my name is "+ this.name + "." + " I've passed " + res + " km for " + this.time + " hours." ;
+		}
+	}
+
+</script>

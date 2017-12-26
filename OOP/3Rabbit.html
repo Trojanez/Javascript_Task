@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	
+	function Rabbit( color ) {
+		this.color = color;
+	}
+
+	Rabbit.prototype = {
+		constructor: Rabbit,
+		changeColor: function( color ) {
+			this.color = color;
+		}
+	}
+
+		var rabbit1 = new Rabbit('red');
+		var rabbit2 = new Rabbit('green');
+	
+		rabbit1.changeColor('gold');
+		rabbit2.changeColor('gold');
+
+</script>

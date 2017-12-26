@@ -1,0 +1,35 @@
+<script type="text/javascript">
+
+	function Horse( name, callback ) {
+			this.name = name;
+			this.race = 0;
+			this.tired = 0;
+	}
+
+		Horse.prototype.totalRace = 0;
+
+		Horse.prototype.run = function( distance ) {
+			this.race += distance;
+			while(distance/distance == 1) {
+				this.tired += distance/distance;
+				distance--
+
+				if (this.tired == 10) {
+					Horse.prototype.tiredness();
+					this.tired = 0;
+				}
+			}
+
+			Horse.prototype.totalRace += distance;
+		}
+
+		Horse.prototype.tiredness = function() {
+			setTimeout(function() {
+				alert('Лошадь отдыхает!');
+			}, 1000);
+		}
+
+		var horse1 = new Horse('Marta');
+		var horse2 = new Horse('Lol');
+
+</script>
