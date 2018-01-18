@@ -1,0 +1,11 @@
+#go {
+	width: 200px;
+	height: 200px;
+	background-color: #eee;
+}
+#go .light {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: black;
+}
